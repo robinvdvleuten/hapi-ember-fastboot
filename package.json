@@ -1,7 +1,7 @@
 {
   "name": "hapi-ember-fastboot",
   "description": "Ember Fastboot handler for hapi.js",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "repository": "git://github.com/webstronauts/hapi-ember-fastboot",
   "main": "lib/index.js",
   "keywords": [
