@@ -2,6 +2,8 @@
 
 Ember Fastboot handler for hapi.js
 
+[![Build Status](https://travis-ci.org/webstronauts/hapi-ember-fastboot.svg?branch=master)](https://travis-ci.org/webstronauts/hapi-ember-fastboot)
+
 ## Example
 
 ```js
