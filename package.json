@@ -1,0 +1,33 @@
+{
+  "name": "hapi-ember-fastboot",
+  "description": "Ember Fastboot handler for hapi.js",
+  "version": "0.1.0",
+  "repository": "git://github.com/webstronauts/hapi-ember-fastboot",
+  "main": "lib/index.js",
+  "keywords": [
+    "ember",
+    "fastboot",
+    "handler",
+    "hapi",
+    "plugin"
+  ],
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "dependencies": {
+    "boom": "3.x.x",
+    "ember-fastboot-server": "0.x.x",
+    "hoek": "3.x.x",
+    "joi": "7.x.x"
+  },
+  "devDependencies": {
+    "code": "2.x.x",
+    "hapi": "11.x.x",
+    "lab": "8.x.x"
+  },
+  "scripts": {
+    "test": "lab -f -a code -t 100 -L",
+    "test-cov-html": "lab -f -a code -r html -o coverage.html"
+  },
+  "license": "MIT"
+}
