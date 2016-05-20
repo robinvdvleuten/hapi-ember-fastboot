@@ -15,7 +15,7 @@
     "node": ">=4.0.0"
   },
   "dependencies": {
-    "boom": "3.x.x",
+    "boom": "3.2.0",
     "ember-fastboot-server": "0.x.x",
     "hoek": "4.0.0",
     "joi": "8.x.x"
