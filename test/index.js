@@ -1,5 +1,6 @@
 'use strict';
 
+const Boom = require('boom');
 const Code = require('code');
 const Fastboot = require('../lib');
 const Hapi = require('hapi');
@@ -44,7 +45,7 @@ describe('Fastboot', () => {
 
         it('handles Fastboot\'s errors', (done) => {
 
-            const server = new Hapi.Server();
+            const server = new Hapi.Server({ debug: false });
             server.connection();
             server.register(Fastboot, Hoek.ignore);
 
@@ -62,14 +63,16 @@ describe('Fastboot', () => {
 
         it('handles Fastboot\'s errors with custom error handler', (done) => {
 
-            const server = new Hapi.Server();
+            const server = new Hapi.Server({ debug: false });
             server.connection();
             server.register(Fastboot, Hoek.ignore);
 
-            const errorHandler = function (err) {
+            const errorHandler = function (err, request, reply) {
 
                 expect(err).not.to.be.an.instanceof(Error);
-                done();
+                expect(err.name).to.equal('UnrecognizedURLError');
+
+                reply(Boom.badImplementation());
             };
 
             server.route({ method: 'GET', path: '/{path*}', handler: { fastboot: { distPath: internals.distPath, errorHandler } } });
@@ -77,7 +80,11 @@ describe('Fastboot', () => {
             server.inject({
                 method: 'GET',
                 url: '/unknown'
-            }, Hoek.ignore);
+            }, (res) => {
+
+                expect(res.statusCode).to.equal(500);
+                done();
+            });
         });
     });
 });
