@@ -12,7 +12,7 @@ const Path = require('path');
 
 const internals = {};
 
-internals.distPath = Path.join(__dirname, '..', 'node_modules/ember-fastboot-server/test/fixtures/basic-app');
+internals.distPath = Path.join(__dirname, '..', 'node_modules/fastboot/test/fixtures/basic-app');
 
 // Test shortcuts
 
