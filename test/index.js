@@ -86,5 +86,32 @@ describe('Fastboot', () => {
                 done();
             });
         });
+
+        it('adds headers from Fastboot\'s response to Hapi\'s response', (done) => {
+
+            const server = new Hapi.Server();
+            server.connection();
+            server.register(Fastboot, Hoek.ignore);
+
+            server.ext('onRequest', (request, reply) => {
+
+                request.raw.res.setHeader('X-Test', 'test-value');
+                request.raw.res.setHeader('X-Custom', 'custom-value');
+
+                return reply.continue();
+            });
+
+            server.route({ method: 'GET', path: '/{path*}', handler: { fastboot: { distPath: internals.distPath } } });
+
+            server.inject({
+                method: 'GET',
+                url: '/'
+            }, (res) => {
+
+                expect(res.result).to.contain('Welcome to Ember');
+                expect(res.headers).to.include({ 'x-test': 'test-value', 'x-custom': 'custom-value' });
+                done();
+            });
+        });
     });
 });
