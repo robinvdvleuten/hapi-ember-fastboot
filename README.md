@@ -42,8 +42,7 @@ server.start((err) => {
 The fastboot handler object has the following properties:
 
 * `distPath` absolute path to your distributed Ember application directory.
-* `errorHandler` an optional error handler to handle any errors thrown by the Fastboot instance. If none given, the handler throws a 500 error by default.
-* `logHandler` an optional log handler to handle logging made by the Fastboot instance. If none given, Fastboot logs to the console by default.
+* `errorHandler` an optional error handler to handle any errors thrown by the FastBoot instance. If none given, the handler throws a 500 error by default.
 
 ## License
 
