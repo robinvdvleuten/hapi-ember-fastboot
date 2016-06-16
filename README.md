@@ -4,6 +4,8 @@ Ember FastBoot handler for hapi.js
 
 For more information about FastBoot, see [www.ember-fastboot.com](https://www.ember-fastboot.com/), the underlaying library used for rendering the Ember application to static HTML.
 
+[![Version](https://img.shields.io/npm/v/hapi-ember-fastboot.svg)](https://www.npmjs.com/package/hapi-ember-fastboot)
+[![License](https://img.shields.io/npm/l/hapi-ember-fastboot.svg)](https://www.npmjs.com/package/hapi-ember-fastboot)
 [![Build Status](https://travis-ci.org/webstronauts/hapi-ember-fastboot.svg?branch=master)](https://travis-ci.org/webstronauts/hapi-ember-fastboot)
 
 ## Usage
