@@ -17,7 +17,7 @@
   "dependencies": {
     "boom": "^3.2.1",
     "fastboot": "^1.0.0-beta.4",
-    "hoek": "^4.0.1",
+    "hoek": "^4.0.2",
     "joi": "^8.4.2"
   },
   "devDependencies": {
