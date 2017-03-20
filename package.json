@@ -15,7 +15,7 @@
     "node": ">=4.0.0"
   },
   "dependencies": {
-    "boom": "^3.2.1",
+    "boom": "^4.0.0",
     "fastboot": "^1.0.0-beta.4",
     "hoek": "^4.0.1",
     "joi": "^8.4.2"
